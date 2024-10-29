@@ -21,16 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
             // Botón de "Completar"
             const completeBtn = document.createElement("button");
             completeBtn.textContent = "Completar";
+            completeBtn.classList.add("complete");
             completeBtn.onclick = () => markAsCompleted(index);
 
             // Botón de "Medio Completar"
             const halfCompleteBtn = document.createElement("button");
             halfCompleteBtn.textContent = "Medio Completar";
+            halfCompleteBtn.classList.add("half-completed");
             halfCompleteBtn.onclick = () => markAsHalfCompleted(index);
 
             li.appendChild(taskDetails);
-            li.appendChild(completeBtn);
-            li.appendChild(halfCompleteBtn);
+            if (task.status !== "completed") {
+                li.appendChild(completeBtn);
+                li.appendChild(halfCompleteBtn);
+            }
 
             taskList.appendChild(li);
         });
