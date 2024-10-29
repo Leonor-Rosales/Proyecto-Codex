@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Tareas</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <h1>Gestión de Tareas</h1>
-    
-    <!-- Formulario para agregar una tarea -->
-    <form id="task-form">
-        <input type="text" id="task-name" placeholder="Nombre de la tarea" required>
-        <select id="task-priority">
-            <option value="normal">Normal</option>
-            <option value="priority">Prioritaria</option>
-        </select>
-        <button type="submit">Agregar Tarea</button>
-    </form>
+    <!-- Barra azul del título -->
+    <header>
+        <h1>Gestión de Tareas</h1>
+    </header>
 
-    <!-- Lista de tareas -->
-    <h2>Lista de Tareas</h2>
-    <ul id="task-list"></ul>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Formulario para agregar tarea -->
+        <h2>Agregar Nueva Tarea</h2>
+        <form id="task-form">
+            <input type="text" id="task-name" placeholder="Nombre de la tarea" required>
+            <textarea id="task-desc" placeholder="Descripción de la tarea" required></textarea>
+            <select id="task-priority">
+                <option value="normal">Normal</option>
+                <option value="priority">Prioritaria</option>
+            </select>
+            <button type="submit">Agregar</button>
+        </form>
 
-    <script src="js/app.js"></script>
+        <!-- Lista de tareas -->
+        <h2>Lista de Tareas</h2>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script src="JS/scrpt.js"></script>
 </body>
 </html>
