@@ -1,0 +1,145 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Barra azul en el título */
+header {
+    background-color: #007bff; /* Color azul */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 2px -2px gray;
+    margin-bottom: 20px;
+}
+
+/* Contenedor general */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Títulos secundarios */
+h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form input, form textarea, form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de tareas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* Estilo para tareas prioritarias */
+li.priority {
+    background-color: #ffe6e6;
+    border-left: 5px solid red;
+}
+
+/* Contenedor del detalle de la tarea (nombre y descripción) */
+li div {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Nombre de la tarea */
+li strong {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Botones dentro de cada tarea */
+li button {
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
+/* Botón de editar */
+li button.edit {
+    background-color: #28a745;
+}
+
+li button.edit:hover {
+    background-color: #218838;
+}
+
+/* Botón de completar tarea */
+li button.complete {
+    background-color: #007bff;
+}
+
+li button.complete:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para tareas completadas */
+li.completed {
+    background-color: #e6ffe6;
+    border-left: 5px solid green;
+    text-decoration: line-through;
+}
+
+li.half-completed {
+    background-color: #fff8e6;
+    border-left: 5px solid #ffcc00;
+}
