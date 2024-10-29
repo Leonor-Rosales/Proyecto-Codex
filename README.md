@@ -20,7 +20,7 @@ Este proyecto tiene como objetivo ayudar a los estudiantes a organizar sus tarea
 
 ## Integrantes 👫👫
 - Integrante 1: Alegría Orós, Diego José - 1631524
-- Integrante 2: Velásquez Villagrán, Bernardo Manuel - 1632224
+- Integrante 2: Velásquez Villagran, Bernardo Manuel - 1632224
 - Integrante 3: Rosales Gutiérrez, María Leonor - 1560124
 - Integrante 4: Santay Matías, Mily Angélica Virginia - 1507624
 
