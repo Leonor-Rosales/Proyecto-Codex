@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="CSS/Style-tachi.css">
+</head>
+<body>
+    <!-- Barra azul del título -->
+    <header>
+        <h1>Gestión de Tareas</h1>
+    </header>
 
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Formulario para agregar tarea -->
+        <h2>Agregar Nueva Tarea</h2>
+        <form id="task-form">
+            <input type="text" id="task-name" placeholder="Nombre de la tarea" required>
+            <textarea id="task-desc" placeholder="Descripción de la tarea" required></textarea>
+            <select id="task-priority">
+                <option value="normal">Normal</option>
+                <option value="priority">Prioritaria</option>
+            </select>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <!-- Lista de tareas -->
+        <h2>Lista de Tareas</h2>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script src="JS/jsTachi.js"></script>
+</body>
+</html>
