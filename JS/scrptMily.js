@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Inicializamos una lista de ejemplo
     let tasks = [
-        { name: "Tarea 1", description: "Descripción de la tarea 1", status: "normal" },
-        { name: "Tarea 2", description: "Descripción de la tarea 2", status: "half-completed" },
-        { name: "Tarea 3", description: "Descripción de la tarea 3", status: "completed" }
+        { name: "Laboratorio 1", description: "Laboratorio de programación", status: "normal" },
+        { name: "Laboratorio 2", description: "Laboratorio de cálculo I", status: "half-completed" },
+        { name: "Laboratorio 3", description: "Laboratorio de física I", status: "completed" }
     ];
 
     // Función para mostrar las tareas
