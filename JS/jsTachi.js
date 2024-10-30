@@ -1,8 +1,8 @@
 document.getElementById("task-form").addEventListener("submit", function (e) {
     e.preventDefault();
-console.log("formulario enviado");
+    console.log("formulario enviado");
     const taskName = document.getElementById("task-name").value;
-    const taskDesc = document.getElementById("task-desc").value;  // Obtener la descripción
+    const taskDesc = document.getElementById("task-desc").value;
     const taskPriority = document.getElementById("task-priority").value;
 
     // Verificar que los campos no estén vacíos
@@ -13,9 +13,10 @@ console.log("formulario enviado");
 
     // Agregar la tarea
     AddTask(taskName, taskDesc, taskPriority);
+
     // Recargar la lista de tareas
     GetTasks();
-    
+
     // Limpiar los campos del formulario después de agregar la tarea
     document.getElementById("task-name").value = "";
     document.getElementById("task-desc").value = "";
@@ -40,7 +41,9 @@ function GetTasks() {
 
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
-        li.classList.add(task.priority === "priority" ? "priority" : "");
+        if (task.priority === "priority") {
+            li.classList.add("priority");
+        }
 
         const taskDetails = document.createElement("div");
         taskDetails.innerHTML = `<strong>${task.name}</strong><br>${task.description}`;
