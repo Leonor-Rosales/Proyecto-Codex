@@ -1,10 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Tareas</title>
-    <link rel="stylesheet" href="CSS/styleAlegria">
+    <title>Lista de Tareas</title>
+    <style>
+        /* Estilo general del cuerpo */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Barra azul en el título */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 2px -2px gray;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor general */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Títulos secundarios */
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de tareas */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Botones dentro de cada tarea */
+        li button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        li button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para tareas completadas */
+        li.completed {
+            background-color: #e6ffe6;
+            border-left: 5px solid green;
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,10 +88,66 @@
     </header>
 
     <div class="container">
-        <h2>Lista de Tareas</h2>
-        <ul id="task-list"></ul>
+        <h2>Tareas Pendientes</h2>
+        <ul id="task-list">
+            <!-- Lista de tareas pendientes -->
+        </ul>
+
+        <h2>Tareas Completadas</h2>
+        <ul id="completed-list">
+            <!-- Lista de tareas completadas -->
+        </ul>
     </div>
 
-    <script src="JS/scrptAlegria.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Inicializamos una lista de ejemplo
+            let tasks = [
+                { name: "Laboratorio 1", description: "Laboratorio de programación", status: "normal" },
+                { name: "Laboratorio 2", description: "Laboratorio de cálculo I", status: "half-completed" },
+                { name: "Laboratorio 3", description: "Laboratorio de física I", status: "completed" }
+            ];
+
+            // Función para mostrar las tareas
+            function displayTasks() {
+                const taskList = document.getElementById("task-list");
+                const completedList = document.getElementById("completed-list");
+                taskList.innerHTML = ''; // Limpiar lista de tareas pendientes
+                completedList.innerHTML = ''; // Limpiar lista de tareas completadas
+
+                tasks.forEach((task, index) => {
+                    const li = document.createElement("li");
+                    li.classList.add(task.status);
+
+                    const taskDetails = document.createElement("div");
+                    taskDetails.innerHTML = `<strong>${task.name}</strong><br>${task.description}`;
+
+                    // Botón de "Completar" si la tarea no está completada
+                    if (task.status !== "completed") {
+                        const completeBtn = document.createElement("button");
+                        completeBtn.textContent = "Completar";
+                        completeBtn.onclick = () => markAsCompleted(index);
+
+                        li.appendChild(taskDetails);
+                        li.appendChild(completeBtn);
+
+                        taskList.appendChild(li); // Agregar a lista de tareas pendientes
+                    } else {
+                        li.appendChild(taskDetails); // Agregar solo los detalles para tareas completadas
+                        completedList.appendChild(li); // Agregar a lista de tareas completadas
+                    }
+                });
+            }
+
+            // Marcar tarea como completada y actualizar listas
+            function markAsCompleted(index) {
+                tasks[index].status = "completed";
+                displayTasks();
+            }
+
+            // Mostrar las tareas al cargar la página
+            displayTasks();
+        });
+    </script>
 </body>
 </html>
