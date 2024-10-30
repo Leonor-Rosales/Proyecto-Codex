@@ -1,36 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Tareas</title>
-    <link rel="stylesheet" href="CSS/Style-tachi.css">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Barra azul del título -->
-    <header>
-        <h1>Gestión de Tareas</h1>
-    </header>
-
-    <!-- Contenedor principal -->
     <div class="container">
-        <!-- Formulario para agregar tarea -->
-        <h2>Agregar Nueva Tarea</h2>
-        <form id="task-form">
-            <input type="text" id="task-name" placeholder="Nombre de la tarea" required>
-            <textarea id="task-desc" placeholder="Descripción de la tarea" required></textarea>
-            <select id="task-priority">
-                <option value="normal">Normal</option>
-                <option value="priority">Prioritaria</option>
-            </select>
-            <button type="submit">Agregar</button>
-        </form>
-
-        <!-- Lista de tareas -->
-        <h2>Lista de Tareas</h2>
-        <ul id="task-list"></ul>
+        <div class="image"></div>
+        <div class="form">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <input type="text" id="username" name="username" placeholder="Usuario o Correo" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+            <p>¿No tienes una cuenta? <a href="registro.html">Crear Cuenta</a></p>
+        </div>
     </div>
-
-    <script src="JS/jsTachi.js"></script>
+    <script src="JS/scrpt.js"></script>
 </body>
 </html>
